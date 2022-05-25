@@ -107,8 +107,8 @@ img {
     }
 
     button {
-        height: 55px;
-        width: 55px;
+        /* height: 100%;
+        width: 55px; */
         font-size: 40px;
         font-weight: bold;
       }
