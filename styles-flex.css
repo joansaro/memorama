@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  background: rgb(63, 219, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 219, 251, 1) 0%,
+    rgba(84, 70, 252, 1) 100%
+  );
+
+  font-family: sans-serif;
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+h1 {
+  padding: 20px;
+}
+
+.sectionOne {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 254, 255, 0.2);
+  border-radius: 8px;
+  padding-bottom: 40px;
+}
+
+.panel {
+  display: flex;
+
+  flex-wrap: wrap;
+  width: 90%;
+  height: 90%;
+}
+
+button {
+  height: 25%;
+  width: 25%;
+  padding: 5px;
+  /* font-size: 40px;
+    font-weight: bold; */
+}
+
+.sectionTwo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(255, 254, 255, 0.2);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  width: 250px;
+  height: 150px;
+  padding: 0 20px;
+}
+
+.estadisticas {
+  border: 1px solid white;
+  height: 90px;
+  border-radius: 8px;
+  padding: 8px 20px;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 80%;
+}
+
+@media screen and (max-width: 767px) {
+  main {
+    /* background-color: red; */
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .sectionOne {
+    align-items: center;
+    width: 600px;
+    height: 600px;
+    background: rgba(255, 254, 255, 0.2);
+    border-radius: 8px;
+    padding-bottom: 40px;
+  }
+
+  button {
+    height: 25%;
+    width: 25%;
+    padding: 5px;
+    /* font-size: 40px;
+    font-weight: bold; */
+  }
+
+  .sectionTwo {
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    background: rgba(255, 254, 255, 0.2);
+    border-radius: 8px;
+    width: 100%;
+  }
+
+  .estadisticas {
+    width: 30%;
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .sectionOne {
+    width: 500px;
+    height: 500px;
+  }
+
+  .sectionTwo {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+    .sectionOne {
+        width: 400px;
+        height: 400px;
+      }
+
+      .estadisticas{
+          font-size: 13px;
+          text-align: center;
+      }
+}
+
+@media screen and (max-width: 415px) {
+    .sectionOne {
+        width: 325px;
+        height: 325px;
+      }
+
+      button{
+          margin-bottom: 2px;
+          width: 25%;
+          height: 28%;
+      }
+
+      .sectionTwo{
+          flex-direction: column;
+          width: 325px;
+
+      }
+
+      .estadisticas{
+          width: 70%;
+          font-size: 10px;
+          margin: 5px;
+      }
+}

@@ -46,11 +46,11 @@ h1 {
 
 
 
-button {
-  height: 100px;
-  width: 100px;
-  font-size: 40px;
-  font-weight: bold;
+.button {
+  height: 10%;
+  width: 10%;
+  /* font-size: 40px;
+  font-weight: bold; */
 }
 
 button:hover {
@@ -91,9 +91,45 @@ a {
 img {
   width: 80%;
 }
+/* 
+@media screen and (max-width: 576px) {
+  main {
+      width: 90%;
+      flex-direction: column;
+  }
+  
+  .sectionOne {
+      width: 85%;
+  }
 
-@media screen and (max-width: 1024px) {
+  button {
+      height: 100%;
+      width: 100%;
+      font-size: 40px;
+      font-weight: bold;
+    }
+  
+  .sectionTwo {
+      width: 85%;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      height: 60px;
+      margin-top: 10px;
+  }
 
+  .estadisticas {
+      display: flex;
+      justify-content: space-around;
+      width: 35%;
+      font-size: 10px;
+      height: 50px;
+      border-radius: 8px;
+      padding: 10px;
+      border: none;
+    }
 }
 
 @media screen and (max-width: 320px) {
@@ -107,8 +143,8 @@ img {
     }
 
     button {
-        /* height: 100%;
-        width: 55px; */
+      height: 100%;
+      width: 100%;
         font-size: 40px;
         font-weight: bold;
       }
@@ -128,61 +164,29 @@ img {
         display: flex;
         justify-content: center;
         /* width: 35%; */
-        font-size: 10px;
+        /* font-size: 10px;
         height: 50px;
         border-radius: 8px;
         padding: 5px;
         border: none;
       }
-}
+} */
 
-@media screen and (max-width: 576px) {
-    main {
-        width: 90%;
-        flex-direction: column;
-    }
-    
-    .sectionOne {
-        width: 85%;
-    }
 
-    button {
-        height: 100%;
-        width: 100%;
-        font-size: 40px;
-        font-weight: bold;
-      }
-    
-    .sectionTwo {
-        width: 85%;
-        border-radius: 8px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        height: 60px;
-        margin-top: 10px;
-    }
-
-    .estadisticas {
-        display: flex;
-        justify-content: space-around;
-        width: 35%;
-        font-size: 10px;
-        height: 50px;
-        border-radius: 8px;
-        padding: 10px;
-        border: none;
-      }
-}
 @media screen and (min-width: 767px) {
-    
+  
 }
-@media screen and (min-width: 1040px) {
-}
-
-@media screen and (min-width: 2048) {
+@media screen and (min-width: 1024px) {
 }
 
-@media screen and (min-width: 3840) {
+@media screen and (max-width: 1040px) {
+
 }
+
+@media screen and (max-width: 2048) {
+
+}
+
+@media screen and (max-width: 3840) {
+
+} 
