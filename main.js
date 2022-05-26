@@ -1,4 +1,5 @@
 let number = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8];
+
 let tarjetasDestapadas = 0;
 let cardOne = null;
 let cardTwo = null;
@@ -22,27 +23,40 @@ let mostrarMovimientos = document.getElementById('movimientos');
 let mostrarAciertos = document.getElementById('aciertos');
 let mostrarTiempo = document.getElementById('t-restante');
 
+
+
+
 number = number.sort(() => { return Math.random() - 0.5 });
 console.log(number);
 
+
+
+
+
 const contarTiempo = () => {
-   tiempoRegresivoId = setInterval(()=>{
-       timer--;
-       mostrarTiempo.innerHTML = `Tiempo: ${timer} s`;
+    tiempoRegresivoId = setInterval(() => {
+        timer--;
+        mostrarTiempo.innerHTML = `Tiempo: ${timer} s`;
         if (timer == 0) {
             clearInterval(tiempoRegresivoId);
             bloquearTarjetas();
             loseAudio.play();
+            mostrarAciertos.innerHTML = `Lo siento`;
+            mostrarTiempo.innerHTML = `Perdiste 😭`
+            mostrarMovimientos.innerHTML = `Movimientos: ${movimientos} 😵`;
+            document.getElementById('reset').classList.add ("reset");
+            document.getElementById('reset').classList.remove ("reset-hidden");
+            document.getElementById('reset').innerHTML = `Jugar de nuevo`;
         }
-    },1000);
+    }, 1000);
 };
 
 const bloquearTarjetas = () => {
-   for(let i = 0; i <= 15; i++){
-    let tarjetaBloqueada = document.getElementById(i);
-    tarjetaBloqueada.innerHTML = `<img src="./images/${number[i]}.png" alt="">`;
-    tarjetaBloqueada.disabled = true;
-   }
+    for (let i = 0; i <= 15; i++) {
+        let tarjetaBloqueada = document.getElementById(i);
+        tarjetaBloqueada.innerHTML = `<img src="./images/${number[i]}.png" alt="">`;
+        tarjetaBloqueada.disabled = true;
+    }
 };
 
 
@@ -56,6 +70,7 @@ const destapar = (id) => {
 
     if (tarjetasDestapadas == 1) {
         //    Mostrar primer numero
+
         cardOne = document.getElementById(id);
         firstResult = number[id];
         cardOne.innerHTML = `<img src="./images/${firstResult}.png" alt="">`;
@@ -64,7 +79,7 @@ const destapar = (id) => {
         // Desabilitar boton
         cardOne.disabled = true;
 
-    } else if (tarjetasDestapadas == 2){
+    } else if (tarjetasDestapadas == 2) {
         // Mostrar segunfo numero
         cardTwo = document.getElementById(id);
         secondResult = number[id]
@@ -76,7 +91,7 @@ const destapar = (id) => {
         // Incrementar movimientos
         movimientos++;
         mostrarMovimientos.innerHTML = `Movimientos: ${movimientos}`
-    
+
         if (firstResult == secondResult) {
             // reset counter
             tarjetasDestapadas = 0;
@@ -85,17 +100,21 @@ const destapar = (id) => {
             aciertos++
             mostrarAciertos.innerHTML = `Aciertos: ${aciertos}`
             rightAudio.play();
-            if (aciertos == 8){
+            if (aciertos == 8) {
                 clearInterval(tiempoRegresivoId);
                 mostrarAciertos.innerHTML = `Aciertos: ${aciertos} 😱`;
                 mostrarTiempo.innerHTML = `Fantastico 🎉, solo demoraste ${timerInitial - timer} s`
                 mostrarMovimientos.innerHTML = `Movimientos: ${movimientos} 😎`;
+                document.getElementById('reset').classList.add ("reset");
+                document.getElementById('reset').classList.remove ("reset-hidden");
+                document.getElementById('reset').innerHTML = `Jugar de nuevo`;
+
                 winAudio.play();
             }
-        } else{
+        } else {
             // mostrar momentaneamente valores y volvera tapar
             wrongAudio.play();
-            setTimeout(()=>{
+            setTimeout(() => {
                 cardOne.innerHTML = ' ';
                 cardTwo.innerHTML = ' ';
                 cardOne.disabled = false;
@@ -106,3 +125,45 @@ const destapar = (id) => {
     }
 };
 
+
+
+const resetear = () => {
+
+    // Reiniciar variables
+    number = number.sort(() => { return Math.random() - 0.5 });
+
+    tarjetasDestapadas = 0;
+    cardOne = null;
+    cardTwo = null;
+    firstResult = null;
+    secondResult = null;
+    movimientos = 0;
+    aciertos = 0;
+    temporizador = false;
+    timer = 30;
+    timerInitial = 30;
+
+    // Reiniciar tiempo
+    clearInterval(tiempoRegresivoId);
+    mostrarTiempo.innerHTML = `Tiempo: ${timer} s`;
+
+    // Reiniciar movimientos
+    mostrarMovimientos.innerHTML = `Movimientos: ${movimientos}`;
+
+    // Reiniciar aciertos
+    mostrarAciertos.innerHTML = `Aciertos: ${aciertos}`;
+
+    // Reiniciar tarjetas
+    for (let i = 0; i <= 15; i++) {
+        let tarjeta = document.getElementById(i);
+        tarjeta.innerHTML = `<img src="./images/back.png" alt="">`;
+        tarjeta.disabled = false;
+    }
+
+    document.getElementById('reset').classList.add ("reset-hidden");
+    document.getElementById('reset').classList.remove ("reset");
+    document.getElementById('reset').innerHTML = ``;
+
+
+
+};
