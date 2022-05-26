@@ -164,6 +164,4 @@ const resetear = () => {
     document.getElementById('reset').classList.remove ("reset");
     document.getElementById('reset').innerHTML = ``;
 
-
-
 };
