@@ -1,0 +1,38 @@
+.navbar {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.nav  {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255, 254, 255, 0.2);
+    border-radius: 8px;
+    padding: 10px 25px;
+    margin: 10px 40px;
+}
+
+.link a{
+    color: white;
+
+}
+
+.link:hover{
+  cursor: pointer;
+  background: rgba(255, 254, 255, 0.468);
+}
+
+.disabled{
+    background: rgba(255, 254, 255, 0.468);
+    pointer-events: none;
+
+}

@@ -33,6 +33,11 @@ h1 {
   padding: 20px;
 }
 
+#textoVictoria{
+  visibility: hidden;
+  color: rgb(41, 26, 170);
+}
+
 .sectionOne {
   display: flex;
   flex-direction: column;
@@ -53,33 +58,11 @@ h1 {
 }
 
 button {
-  height: 25%;
-  width: 25%;
+  height: 30%;
+  width: 30%;
+  margin: 7px;
+  font-weight: 50px;
 }
-
-.sectionTwo {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  background: rgba(255, 254, 255, 0.2);
-  border-radius: 8px;
-  width: 300px;
-  height: 500px;
-  padding: 0 20px;
-  margin-left: 10px;
-}
-
-.estadisticas {
-  border: 1px solid white;
-  width: 90%;
-  height: 125px;
-  border-radius: 8px;
-  padding: 8px 20px;
-  display: flex;
-  align-items: center;
-}
-
 .reset-hidden{
   background-color: transparent;
   border: none;
@@ -104,9 +87,6 @@ button {
 
 }
 
-img {
-  width: 80%;
-}
 
 @media screen and (max-width: 767px) {
   main {
@@ -128,23 +108,6 @@ img {
     width: 25%;
     padding: 5px;
   }
-
-  .sectionTwo {
-    flex-direction: row;
-    justify-content: space-around;
-    margin-left: 0;
-    margin-top: 20px;
-    background: rgba(255, 254, 255, 0.2);
-    border-radius: 8px;
-    width: 600px;
-    height: 125px;
-  }
-
-  .estadisticas {
-    width: 30%;
-    height: 80%;
-    font-size: 15px;
-  }
 }
 
 @media screen and (max-width: 576px) {
@@ -152,26 +115,12 @@ img {
     width: 500px;
     height: 500px;
   }
-
-  .sectionTwo {
-    width: 500px;
-  }
 }
 
 @media screen and (max-width: 500px) {
     .sectionOne {
         width: 400px;
         height: 400px;
-      }
-
-      .sectionTwo{
-          width: 400px;
-
-      }
-
-      .estadisticas{
-          font-size: 13px;
-          text-align: center;
       }
 }
 
@@ -185,21 +134,6 @@ img {
           margin-bottom: 2px;
           width: 25%;
           height: 25%;
-      }
-
-      .sectionTwo{
-          /* flex-direction: column; */
-          width: 325px;
-          height: 100px;
-
-      }
-
-      .estadisticas{
-          /* width: 70%; */
-          font-size: 10px;
-          margin: 5px;
-          text-align: left;
-          padding: 5px;
       }
 
       h2{
